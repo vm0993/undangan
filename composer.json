@@ -15,6 +15,7 @@
         "laravel/ui": "1.2",
         "doctrine/dbal": "^2.10",
         "barryvdh/laravel-snappy": "^0.4.4",
+        "lorisleiva/laravel-deployer": "^0.2.11",
         "maatwebsite/excel": "^3.1",
         "laravelcollective/html": "^6.1.2",
         "yajra/laravel-datatables": "^1.5"
