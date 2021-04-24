@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use PDF;
 use App\Models\Invitation;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -64,8 +65,7 @@ class InvitationController extends Controller
                 ->addColumn('action', function ($data) {
                     $uri_tamu = route('master.tamu.create',['sistem_id'=> 1]);
                     //$uri_add = route('kepesertaan.komda.mitra.create',['komda_id'=> $data->komda_id]);
-                    return '<a href="#" data-id='.$data->id.' data-token="{{csrf_token()}}" data-bs-toggle="tooltip" title="Hapus Tamu">
-                                <i class="align-middle" data-feather="trash"></i></a>';
+                    return '<a href="#"><i class="align-middle" data-feather="printer"></i>Cetak</a>';
                 })
                 ->rawColumns(['gabungan','judulundangan','konfirmasi','status','action'])
                 ->make(true);
@@ -147,5 +147,19 @@ class InvitationController extends Controller
                 'redirect_url' => route('invitation')
             ]);
         }
+    }
+
+    public function cetakUndangan(Request $request, $id)
+    {
+        $title = 'Cetak Undangan';
+        $invitation = Invitation::with('tamu')->find($id);
+
+        $params = [
+            'title'  => $title,
+            'invitation' => $invitation,
+        ];
+
+        $pdf = PDF::loadView('undangan.pdf', $params);
+        return $pdf->inline($invitation->jurnal_no.'.pdf');
     }
 }

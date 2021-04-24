@@ -67,7 +67,9 @@ Route::group( ['middleware' => ['auth','verified']], function() {
     Route::group(['prefix' => 'invitation'], function() {
         Route::get('/','InvitationController@index')->name('invitation');
         Route::match(['get', 'post'],'/{sistem_id}/tamu', 'InvitationController@addUndangan')->name('invitation.create');
-            Route::match(['get', 'put'],'/{sistem_id}/tamu/{id}/update', 'InvitationController@editUndangan')->name('invitation.update');
+        Route::match(['get', 'put'],'/{sistem_id}/tamu/{id}/update', 'InvitationController@editUndangan')->name('invitation.update');
+        //Cetak
+        Route::get('/{id}/pdf','InvitationController@cetakUndangan')->name('invitation.pdf');
     });
 
     Route::group(['prefix' => 'monitoring'], function() {
