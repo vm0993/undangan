@@ -25,7 +25,7 @@
                             <div class="mb-3">
                                 <label class="form-label">Username/Email</label>
                                 <input type="text" class="form-control" id="email" name="email" placeholder="Username or Email">
-                                @error('username')
+                                @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
