@@ -19,7 +19,7 @@ header {
     background-size: 100%;
     float:left;
     width:50%;
-    height: 50em;
+    height: 70em;
     font-family: Baskerville;
     color: #575557;
     position: relative;
@@ -38,7 +38,7 @@ header {
 
 .javery {
     position: absolute;
-    top: 115px;
+    top: 135px;
     left: 235px;  
 }
 
