@@ -11,18 +11,18 @@
     <link rel="stylesheet" href="{{ asset('css/style-new.css') }}" media="all" />
 </head>
     <body>
-       <header class="clearfix">
-            <div class="logo">
-                <span class="laura">N</span>
-                <span class="ampersand">&</span>
-                <span class="javery">N</span>
-                <date>27.05.2021</date>
-              </div>
-            <div id="company">
-                <img src="data:image/png;base64, {{ base64_encode( QrCode::format('png')->size(240)->generate('ABC Alkaline')) }} ">
+        <page size="A5" layout="landscape">
+            <div class="clearfix">
+                <div class="logo">
+                    <span class="laura">N</span>
+                    <span class="ampersand">&</span>
+                    <span class="javery">N</span>
+                    <date>27.05.2021</date>
+                  </div>
+                <div id="company">
+                    <img src="data:image/png;base64, {{ base64_encode( QrCode::format('png')->size(240)->generate('ABC Alkaline')) }} ">
+                </div>
             </div>
-        </header>
-        <main>
-        </main>
+        </page>
     </body>
 </html>
