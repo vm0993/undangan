@@ -9,32 +9,24 @@
     </div>
     <div class="modal-body m-2">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-6">
                 <div class="form-floating mb-3">
                     {{ Form::select('guest_id', \App\Helpers\Helper::getDaftarTamu(), $invite->guest_id , ['id'=>'guest_id', 'class'=>'form-control select2','data-toggle'=>'select2','placeholder'=>'Pilih Tamu/Peserta']) }}
                     <label for="guest_id">Nama</label>
                 </div>
             </div>
-        </div>
-        <div class="row mt-1">
-            <div class="col-md-4">
-                <div class="form-floating">
-                    {{ Form::date('invitation_date',null, ['id'=>'invitation_date', 'class'=>'form-control','placeholder'=>'Tangggal Undangan'] ) }}
-                    <label for="invitation_date">Tanggal Undangan</label>
+            <div class="col-md-6">
+                <div class="form-floating mb-3">
+                    {{ Form::select('wedding_id', \App\Helpers\Helper::getDaftarPernikahan(), $invite->wedding_id , ['id'=>'wedding_id', 'class'=>'form-control select2','data-toggle'=>'select2','placeholder'=>'Pilih Acara']) }}
+                    <label for="wedding_id">Acara Pernikahan</label>
                 </div>
             </div>
+        </div>
+        <div class="row mt-1">
             <div class="col-md-8">
                 <div class="form-floating">
                     {{ Form::text('time_start',null, ['id'=>'time_start', 'class'=>'form-control','data-mask'=>'00:00:00','placeholder'=>'HH:MM:SS'] ) }}
                     <label for="time_start">Jam Mulai Acara [HH:MM:SS]</label>
-                </div>
-            </div>
-        </div>
-        <div class="row mt-1">
-            <div class="col-md-12">
-                <div class="form-floating">
-                    {{ Form::text('title',null, ['id'=>'title', 'class'=>'form-control','placeholder'=>'Acara'] ) }}
-                    <label for="title">Judul Acara</label>
                 </div>
             </div>
         </div>

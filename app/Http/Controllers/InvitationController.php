@@ -8,6 +8,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Yajra\DataTables\DataTables;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class InvitationController extends Controller
 {
@@ -20,8 +21,9 @@ class InvitationController extends Controller
     {
         if($request->ajax())
         {
-            $record = Invitation::select(\DB::raw('invitations.id,guests.name,guests.no_telp,invitations.title,invitations.time_start,invitations.invitation_date,invitations.status,invitations.realiaze_status'))
+            $record = Invitation::select(\DB::raw('invitations.id,guests.name,guests.no_telp,weddings.wedding_theme,invitations.time_start,weddings.wedding_date,invitations.status,invitations.realiaze_status'))
                         ->join('guests','guests.id','=','invitations.guest_id')
+                        ->join('weddings','weddings.id','=','invitations.wedding_id')
                         ->get();
 
             return DataTables::of($record)
@@ -31,14 +33,14 @@ class InvitationController extends Controller
                                 <div class="media-body">
                                     <a href="#modalForm" data-href="'.$uri_tamu.'/'.$data->id.'/update" data-bs-toggle="modal" class="text-semibold">'.$data->name.'</a>
                                 </div>
-                                <div class="text-muted text-size-small"><span class="text-semibold">'.Carbon::parse($data->invitation_date)->format('d M Y').'</span>
+                                <div class="text-muted text-size-small"><span class="text-semibold">'.Carbon::parse($data->wedding_date)->format('d M Y').'</span>
                                 </div>
                             </div>';
                 })
                 ->addColumn('judulundangan',function($data){
                     return '<div class="media-left">
                                 <div class="media-body">
-                                    <span class="text-blue-700 text-semibold">'.$data->title.'</span>
+                                    <span class="text-blue-700 text-semibold">'.$data->wedding_theme.'</span>
                                 </div>
                                 <div class="text-muted text-size-small"><span class="text-semibold">'.Carbon::parse($data->time_start)->format('h:m:ss').'</span>
                                 </div>
@@ -85,9 +87,9 @@ class InvitationController extends Controller
             
         }else {
             $rules = [
-                'guest_id' => 'required',
+                'wedding_id' => 'required',
+                'guest_Id' => 'required',
                 'invitation_date' => 'required',
-                'title' => 'required',
             ];
 
             $validator = Validator::make($request->all(), $rules);
@@ -99,8 +101,7 @@ class InvitationController extends Controller
                 
             $peserta = new Invitation();
             $peserta->guest_id = $request->guest_id;
-            $peserta->invitation_date = $request->invitation_date;
-            $peserta->title = $request->title;
+            $peserta->wedding_id = $request->wedding_id;
             $peserta->time_start = $request->time_start;
             $peserta->user_id = auth()->user()->id;
             $peserta->save();
@@ -123,9 +124,9 @@ class InvitationController extends Controller
             
         }else {
             $rules = [
-                'guest_id' => 'required',
+                'wedding_id' => 'required',
+                'guest_Id' => 'required',
                 'invitation_date' => 'required',
-                'title' => 'required',
             ];
 
             $validator = Validator::make($request->all(), $rules);
@@ -137,8 +138,7 @@ class InvitationController extends Controller
                 
             $peserta = Invitation::find($id);
             $peserta->guest_id = $request->guest_id;
-            $peserta->invitation_date = $request->invitation_date;
-            $peserta->title = $request->title;
+            $peserta->wedding_id = $request->wedding_id;
             $peserta->time_start = $request->time_start;
             $peserta->save();
             
@@ -152,14 +152,14 @@ class InvitationController extends Controller
     public function cetakUndangan(Request $request, $id)
     {
         $title = 'Cetak Undangan';
-        $invitation = Invitation::with('tamu')->find($id);
+        $invitation = ""; //Invitation::with('tamu')->find($id);
 
         $params = [
             'title'  => $title,
             'invitation' => $invitation,
         ];
 
-        $pdf = PDF::loadView('undangan.pdf', $params);
-        return $pdf->inline($invitation->jurnal_no.'.pdf');
+        $pdf = PDF::loadView('undangan.pdfs.undangan', $params);
+        return $pdf->inline('test.pdf');
     }
 }

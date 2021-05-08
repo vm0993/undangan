@@ -26,6 +26,7 @@
                     <i class="align-middle" data-feather="layout"></i> <span class="align-middle">Master</span>
                 </a>
                 <ul id="pages" class="sidebar-dropdown list-unstyled collapse show" data-bs-parent="#sidebar">
+                    <li class="sidebar-item"><a class="sidebar-link" href="{{ route('weddings') }}">Acara</a></li>
                     <li class="sidebar-item"><a class="sidebar-link" href="{{ route('master.tamu') }}">Tamu/Peserta</a></li>
                 </ul>
             </li>

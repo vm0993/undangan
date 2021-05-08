@@ -1,0 +1,221 @@
+@font-face {
+    font-family: SourceSansPro;
+    src: url(SourceSansPro-Regular.ttf);
+  }
+  
+  .clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  a {
+    color: #0087C3;
+    text-decoration: none;
+  }
+  
+  body {
+    position: relative;
+    width: 21cm;  
+    height: 29.7cm; 
+    margin: 5px auto; 
+    color: #555555;
+    background: #FFFFFF; 
+    font-family: Arial, sans-serif; 
+    font-size: 14px; 
+    font-family: SourceSansPro;
+  }
+  
+  header {
+    margin-top: 5px;
+    padding: 2px 0;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #AAAAAA;
+  }
+  
+  #logo {
+    float: right;
+    text-align: right;
+    margin-top: 8px;
+  }
+  
+  #logo img {
+    height: 70px;
+  }
+  
+  #company {
+    float: left;
+    text-align: left;
+  }
+  
+  
+  #details {
+    margin-bottom: 5px;
+  }
+  
+  #client {
+    padding-left: 6px;
+    border-left: 6px solid #0087C3;
+    float: left;
+  }
+  
+  #footerkiri {
+    padding-left: 6px;
+    float: left;
+  }
+  
+  #footertengah {
+    float: center;
+    text-align: center;
+  }
+  
+  #footerkanan {
+    float: right;
+    text-align: center;
+  }
+  
+  #client .to {
+    color: #777777;
+  }
+  
+  h3{
+    margin-top:2px;
+    margin-bottom:2px;
+  }
+  
+  h2.name {
+    font-size: 1.2em;
+    font-weight: normal;
+    margin: 0;
+  }
+  
+  #invoice {
+    float: right;
+    text-align: right;
+  }
+  
+  #invoice h1 {
+    color: #0087C3;
+    font-size: 1.2em;
+    line-height: 1em;
+    font-weight: normal;
+    margin: 4px 0;
+  }
+  
+  #invoice .date {
+    font-size: 1.1em;
+    color: #777777;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-bottom: 30px;
+  }
+  
+  table th,
+  table td {
+    text-align: center;
+  }
+  
+  table th {
+    padding: 5px 5px;
+    /*color: #5D6975;*/
+    border-bottom: 1px solid #C1CED9;
+    white-space: nowrap;        
+    font-weight: normal;
+  }
+  
+  table tbody {
+    background: #FFFFFF;
+  }
+  
+  table tbody tr {
+    border-bottom: 1px solid #C1CED9;
+    white-space: nowrap;        
+    font-weight: normal;
+  }
+  
+  table .service,
+  table .desc {
+    text-align: left;
+  }
+  
+  table td {
+    padding: 3px;
+    text-align: right;
+  }
+  table td.no {
+    vertical-align: top;
+    text-align: center;
+  }
+  table td.service,
+  table td.desc {
+    vertical-align: top;
+  }
+  
+  table td.unit,
+  table td.qty,
+  table td.total {
+    vertical-align: top;
+  }
+  
+  table td.sub {
+    border-top: 1px solid #C1CED9;
+  }
+  
+  table td.grand {
+    border-top: 1px solid #5D6975;
+  }
+  
+  table td.kanan{
+    text-align: left;
+    vertical-align: middle;
+  }
+  table td.tengah{
+    text-align: left;
+    vertical-align: middle;
+  }
+  table td.kiri{
+    text-align: left;
+    vertical-align: middle;
+  }
+  
+  .noline{
+    border-bottom: 0px solid transparent;
+  }
+  .jarakkonten{
+    padding: 10px 30px;
+  }
+  
+  #details {
+    margin-bottom: 7px;
+  }
+  
+  #thanks{
+    font-size: 2em;
+    margin-bottom: 50px;
+  }
+  
+  #notices{
+    padding-left: 6px;
+    border-left: 6px solid #0087C3;  
+  }
+  
+  #notices .notice {
+    font-size: 1.2em;
+  }
+  
+  footer {
+    color: #777777;
+    width: 100%;
+    height: 20px;
+    position: absolute;
+    bottom: 0;
+    border-top: 1px solid #AAAAAA;
+    padding: 3px 0;
+    text-align: center;
+  }
+  
+  

@@ -64,6 +64,14 @@ Route::group( ['middleware' => ['auth','verified']], function() {
         });
     });
 
+    Route::group(['prefix' => 'weddings'], function() {
+        Route::get('/','WeddingController@index')->name('weddings');
+        Route::match(['get', 'post'],'/{sistem_id}/pengantin', 'WeddingController@addAcara')->name('weddings.create');
+        Route::match(['get', 'put'],'/{sistem_id}/pengantin/{id}/update', 'WeddingController@editAcara')->name('weddings.update');
+        //Cetak
+        Route::get('/{id}/pdf','InvitationController@cetakUndangan')->name('weddings.pdf');
+    });
+
     Route::group(['prefix' => 'invitation'], function() {
         Route::get('/','InvitationController@index')->name('invitation');
         Route::match(['get', 'post'],'/{sistem_id}/tamu', 'InvitationController@addUndangan')->name('invitation.create');
