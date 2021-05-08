@@ -38,7 +38,7 @@ header {
 
 .javery {
     position: absolute;
-    top: 135px;
+    top: 165px;
     left: 235px;  
 }
 
@@ -53,8 +53,8 @@ date {
     border-top: 1px solid #575557;
     border-bottom: 1px solid #575557;
     position: absolute;
-    top: 160px;
-    left: 170px
+    top: 180px;
+    left: 162px
 }
 #company {
     float: right;
