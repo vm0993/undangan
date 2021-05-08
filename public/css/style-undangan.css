@@ -4,7 +4,11 @@ header {
     width: 37.5em;
     margin: 2em auto;
 }
-   
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
 .logo {
     background: url('https://s.cdpn.io/7635/averyson-logo.gif') no-repeat;
     background-size: 100%;
@@ -47,3 +51,7 @@ date {
     top: 240px;
     left: 260px
 }
+#company {
+    float: right;
+    text-align: left;
+  }

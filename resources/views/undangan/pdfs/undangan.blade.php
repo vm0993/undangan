@@ -21,7 +21,7 @@
                     <span class="javery">N</span>
                     <date>27.05.2021</date>
                   </div>
-                <div id="company">
+                <div id="company" style="text-align: center">
                     <img src="data:image/png;base64, {{ base64_encode( QrCode::format('png')->size(240)->generate('ABC Alkaline')) }} ">
                 </div>
             </div>
