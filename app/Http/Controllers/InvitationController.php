@@ -88,7 +88,7 @@ class InvitationController extends Controller
         }else {
             $rules = [
                 'wedding_id' => 'required',
-                'guest_Id' => 'required',
+                'guest_id' => 'required',
                 'time_start' => 'required',
             ];
 
