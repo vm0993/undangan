@@ -16,9 +16,9 @@
         <section class="sheet padding-10mm" style="padding-top: 25mm;">
             <div class="clearfix">
                 <div class="logo">
-                    <span class="laura">{{ substr($invitation->wedding->pengantin_pria,0,1) }}</span>
+                    <span class="laura">{{ \Illuminate\Support\Str::substr($invitation->wedding->pengantin_pria,0,1) }}</span>
                     <span class="ampersand">&</span>
-                    <span class="javery">{ substr($invitation->wedding->pengantin_wanita,0,1) }}</span>
+                    <span class="javery">{ \Illuminate\Support\Str::substr($invitation->wedding->pengantin_wanita,0,1) }}</span>
                     <date>{{ \Carbon\Carbon::parse($invitation->wedding->wedding_date)->format('d.m.Y') }}</date>
                   </div>
                 <div id="company" style="text-align: center;margin-top:40px;">
