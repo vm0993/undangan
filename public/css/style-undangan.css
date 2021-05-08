@@ -33,13 +33,13 @@ header {
 .laura {
     position: absolute;
     top: 70px;
-    left: 125px;
+    left: 130px;
 }
 
 .javery {
     position: absolute;
     top: 165px;
-    left: 235px;  
+    left: 245px;  
 }
 
 .ampersand {
@@ -53,7 +53,7 @@ date {
     border-top: 1px solid #575557;
     border-bottom: 1px solid #575557;
     position: absolute;
-    top: 200px;
+    top: 205px;
     left: 166px
 }
 #company {
