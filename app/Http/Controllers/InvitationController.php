@@ -152,15 +152,15 @@ class InvitationController extends Controller
     public function cetakUndangan(Request $request, $id)
     {
         $title = 'Cetak Undangan';
-        $invitation = ""; //Invitation::with('tamu')->find($id);
-
+        $invitation = Invitation::with(['tamu','wedding'])->find($id);
+        //return response()->json($invitation);
         $params = [
             'title'  => $title,
             'invitation' => $invitation,
         ];
 
-        return view('undangan.pdfs.undangan', $params);
-        /*$pdf = PDF::loadView('undangan.pdfs.undangan', $params);
-        return $pdf->inline('test.pdf');*/
+        //return view('undangan.pdfs.undangan', $params);
+        $pdf = PDF::loadView('undangan.pdfs.undangan', $params);
+        return $pdf->inline('test.pdf');
     }
 }

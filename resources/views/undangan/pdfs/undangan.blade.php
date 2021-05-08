@@ -16,13 +16,13 @@
         <section class="sheet padding-10mm" style="padding-top: 25mm;">
             <div class="clearfix">
                 <div class="logo">
-                    <span class="laura">N</span>
+                    <span class="laura">{{ substr($invitation->wedding->pengantin_pria,0,1) }}</span>
                     <span class="ampersand">&</span>
-                    <span class="javery">N</span>
-                    <date>27.05.2021</date>
+                    <span class="javery">{ substr($invitation->wedding->pengantin_wanita,0,1) }}</span>
+                    <date>{{ \Carbon\Carbon::parse($invitation->wedding->wedding_date)->format('d.m.Y') }}</date>
                   </div>
                 <div id="company" style="text-align: center;margin-top:40px;">
-                    <img src="data:image/png;base64, {{ base64_encode( QrCode::format('png')->size(240)->generate('ABC Alkaline')) }} ">
+                    <img src="data:image/png;base64, {{ base64_encode( QrCode::format('png')->size(240)->generate($invitation->id)) }} ">
                 </div>
             </div>
         </section>

@@ -10,6 +10,11 @@ class Invitation extends Model
 
     public function tamu()
     {
-        return $this->belongsTo(Guest::class);
+        return $this->belongsTo('\App\Models\Guest','guest_id','id');
+    }
+
+    public function wedding()
+    {
+        return $this->belongsTo(Wedding::class);
     }
 }
