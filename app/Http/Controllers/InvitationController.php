@@ -89,7 +89,7 @@ class InvitationController extends Controller
             $rules = [
                 'wedding_id' => 'required',
                 'guest_Id' => 'required',
-                'invitation_date' => 'required',
+                'time_start' => 'required',
             ];
 
             $validator = Validator::make($request->all(), $rules);
@@ -126,7 +126,7 @@ class InvitationController extends Controller
             $rules = [
                 'wedding_id' => 'required',
                 'guest_Id' => 'required',
-                'invitation_date' => 'required',
+                'time_start' => 'required',
             ];
 
             $validator = Validator::make($request->all(), $rules);
