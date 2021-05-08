@@ -19,7 +19,7 @@ header {
     background-size: 100%;
     float:left;
     width:50%;
-    height: 30em;
+    height: 50em;
     font-family: Baskerville;
     color: #575557;
     position: relative;
@@ -32,21 +32,21 @@ header {
 
 .laura {
     position: absolute;
-    top: 120px;
-    left: 225px;
+    top: 70px;
+    left: 125px;
 }
 
 .javery {
     position: absolute;
-    top: 185px;
-    left: 335px;  
+    top: 115px;
+    left: 235px;  
 }
 
 .ampersand {
     font-style: italic; 
     position: absolute;
-    top: 160px;
-    left: 270px;
+    top: 120px;
+    left: 170px;
 }
 
 date {
