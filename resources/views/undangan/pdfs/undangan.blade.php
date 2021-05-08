@@ -13,7 +13,7 @@
     <style>@page { size: A5 landscape }</style>
 </head>
     <body class="A5 landscape">
-        <section class="sheet padding-10mm">
+        <section class="sheet padding-25mm">
             <div class="clearfix">
                 <div class="logo">
                     <span class="laura">N</span>
