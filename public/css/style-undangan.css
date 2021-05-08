@@ -9,11 +9,16 @@ header {
     display: table;
     clear: both;
 }
+#logo {
+    float: left;
+    text-align: right;
+    margin-top: 8px;
+}
 .logo {
     background: url('https://s.cdpn.io/7635/averyson-logo.gif') no-repeat;
     background-size: 100%;
     float:left;
-    width:100%;
+    width:50%;
     height: 30em;
     font-family: Baskerville;
     color: #575557;
