@@ -38,22 +38,22 @@ header {
 
 .javery {
     position: absolute;
-    top: 160px;
+    top: 135px;
     left: 235px;  
 }
 
 .ampersand {
     font-style: italic; 
     position: absolute;
-    top: 140px;
-    left: 164px;
+    top: 120px;
+    left: 170px;
 }
 
 date {
     border-top: 1px solid #575557;
     border-bottom: 1px solid #575557;
     position: absolute;
-    top: 180px;
+    top: 160px;
     left: 170px
 }
 #company {
