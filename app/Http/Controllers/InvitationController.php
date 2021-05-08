@@ -153,7 +153,7 @@ class InvitationController extends Controller
     {
         $title = 'Cetak Undangan';
         $invitation = Invitation::with(['tamu','wedding'])->find($id);
-        //return response()->json($invitation);
+        //return response()->json(substr($invitation->wedding->pengantin_pria,0,1));
         $params = [
             'title'  => $title,
             'invitation' => $invitation,
