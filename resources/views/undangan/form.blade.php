@@ -30,13 +30,13 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>s
     <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"> Tutup</button>
         <button type="submit" class="btn btn-primary" id="btn-save" value="create">Simpan</button>
     </div>
 {!! Form::close() !!}
-<script src="{{ asset('js/select2.min.js') }}"></script>
+<script src="{{ asset('js/select2.min.jssss') }}"></script>
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         $(".select2").each(function() {
