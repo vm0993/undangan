@@ -18,7 +18,7 @@ header {
     background: url('https://s.cdpn.io/7635/averyson-logo.gif') no-repeat;
     background-size: 100%;
     float:left;
-    width:50%;
+    width:60%;
     height: 70em;
     font-family: Baskerville;
     color: #575557;
@@ -53,8 +53,8 @@ date {
     border-top: 1px solid #575557;
     border-bottom: 1px solid #575557;
     position: absolute;
-    top: 240px;
-    left: 260px
+    top: 140px;
+    left: 200px
 }
 #company {
     float: right;
