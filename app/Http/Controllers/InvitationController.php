@@ -42,7 +42,7 @@ class InvitationController extends Controller
                                 <div class="media-body">
                                     <span class="text-blue-700 text-semibold">'.$data->wedding_theme.'</span>
                                 </div>
-                                <div class="text-muted text-size-small"><span class="text-semibold">'.Carbon::parse($data->time_start)->format('h:m:ss').'</span>
+                                <div class="text-muted text-size-small"><span class="text-semibold">'.Carbon::parse($data->time_start)->format('h:i A').'</span>
                                 </div>
                             </div>';
                 })
@@ -65,9 +65,8 @@ class InvitationController extends Controller
                     }
                 })
                 ->addColumn('action', function ($data) {
-                    $uri_tamu = route('master.tamu.create',['sistem_id'=> 1]);
-                    //$uri_add = route('kepesertaan.komda.mitra.create',['komda_id'=> $data->komda_id]);
-                    return '<a href="#"><i class="align-middle" data-feather="printer"></i>Cetak</a>';
+                    $uri_undangan = route('invitation.pdf',['id'=> $data->id]);
+                    return '<a href="'.$uri_undangan.'" target="_blank"><i class="align-middle" data-feather="printer"></i>Cetak</a>';
                 })
                 ->rawColumns(['gabungan','judulundangan','konfirmasi','status','action'])
                 ->make(true);
@@ -88,7 +87,7 @@ class InvitationController extends Controller
         }else {
             $rules = [
                 'wedding_id' => 'required',
-                'guest_id' => 'required',
+                'guest_Id' => 'required',
                 'time_start' => 'required',
             ];
 
@@ -116,7 +115,6 @@ class InvitationController extends Controller
     public function editUndangan(Request $request, $sistem_id, $id)
     {
         if ($request->isMethod('get')){
-           
             $invite  = Invitation::find($id);
             $save_state = 'edit';
             $title ="Edit Undangan";
