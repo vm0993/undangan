@@ -159,7 +159,8 @@ class InvitationController extends Controller
             'invitation' => $invitation,
         ];
 
-        $pdf = PDF::loadView('undangan.pdfs.undangan', $params);
-        return $pdf->inline('test.pdf');
+        return view('undangan.pdfs.undangan', $params);
+        /*$pdf = PDF::loadView('undangan.pdfs.undangan', $params);
+        return $pdf->inline('test.pdf');*/
     }
 }
