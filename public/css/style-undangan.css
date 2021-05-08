@@ -38,15 +38,15 @@ header {
 
 .javery {
     position: absolute;
-    top: 165px;
+    top: 160px;
     left: 235px;  
 }
 
 .ampersand {
     font-style: italic; 
     position: absolute;
-    top: 120px;
-    left: 170px;
+    top: 140px;
+    left: 164px;
 }
 
 date {
