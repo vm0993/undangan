@@ -12,8 +12,8 @@
     <link rel="stylesheet" href="{{ asset('css/style-undangan.css') }}">
     <style>@page { size: A5 landscape }</style>
 </head>
-    <body class="A5 landscape" style="background-color: #ffff;">
-        <section class="sheet padding-10mm" style="padding-top: 25mm;background-color: #ffff;">
+    <body class="A5 landscape">
+        <section class="sheet padding-10mm" style="padding-top: 25mm;">
             <div class="clearfix">
                 <div class="logo">
                     <span class="laura">{{ substr($invitation->wedding->pengantin_pria,0,1) }}</span>
