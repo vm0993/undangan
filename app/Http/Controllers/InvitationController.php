@@ -151,10 +151,12 @@ class InvitationController extends Controller
     {
         $title = 'Cetak Undangan';
         $invitation = Invitation::with(['tamu','wedding'])->find($id);
-        //return response()->json(substr($invitation->wedding->pengantin_pria,0,1));
+        $undangan = nl2br("Nama : ".$invitation->tamu->name."\r\nNama : ".$invitation->tamu->name."\r\nNo Telp : ".$invitation->tamu->no_telp);
+        
         $params = [
             'title'  => $title,
             'invitation' => $invitation,
+            'undangan' => $undangan,
         ];
 
         //return view('undangan.pdfs.undangan', $params);

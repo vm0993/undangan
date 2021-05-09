@@ -22,7 +22,7 @@
                     <date>{{ \Carbon\Carbon::parse($invitation->wedding->wedding_date)->format('d.m.Y') }}</date>
                   </div>
                 <div id="company" style="text-align: center;margin-top:40px;">
-                    <img src="data:image/png;base64, {{ base64_encode( QrCode::format('png')->size(240)->generate($invitation->id)) }} ">
+                    <img src="data:image/png;base64, {{ base64_encode( QrCode::format('png')->size(240)->generate(str_replace('<br />','',$undangan))) }} ">
                 </div>
             </div>
         </section>
