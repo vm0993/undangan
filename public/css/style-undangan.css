@@ -34,20 +34,20 @@ header {
 .laura {
     position: absolute;
     top: 70px;
-    left: 162px;
+    left: 142px;
 }
 
 .javery {
     position: absolute;
     top: 165px;
-    left: 255px;  
+    left: 235px;  
 }
 
 .ampersand {
     font-style: italic; 
     position: absolute;
     top: 120px;
-    left: 196px;
+    left: 176px;
 }
 
 date {
@@ -55,7 +55,7 @@ date {
     border-bottom: 1px solid #575557;
     position: absolute;
     top: 205px;
-    left: 190px
+    left: 174px
 }
 #company {
     float: right;
