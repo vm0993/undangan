@@ -155,6 +155,22 @@
             ],
             order: [[0, 'asc']]
         });
+        
+        function tamuHadir(id)
+        {
+            $.ajax({
+                url :  uri + '/' + id + '/hadir',
+                type : 'get',
+                data: {
+                    '_token': "{{ csrf_token() }}",
+                    'id': id
+                },
+                success : function(data) {
+                    table.draw();
+                    toastr.info('Tamu sudah hadir', 'info', {timeOut: 5000});
+                }
+            });
+        }
 
         $.ajaxSetup({
             headers: {

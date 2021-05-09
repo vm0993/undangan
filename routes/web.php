@@ -52,6 +52,7 @@ Route::group( ['middleware' => ['auth','verified']], function() {
     //Dashboard
     Route::group(['prefix' => 'dashboard'], function() {
         Route::get('/','HomeController@index')->name('dashboard');
+        Route::get('/{id}/hadir','HomeController@getHadir')->name('dashboard.hadir');
     });
 
     Route::group(['prefix' => 'master'], function() {
