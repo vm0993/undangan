@@ -21,6 +21,7 @@ header {
     width:60%;
     height: 70em;
     font-family: Baskerville;
+    src: url('/public/css/Baskerville\ Bold\ font.ttf');
     color: #575557;
     position: relative;
 }
