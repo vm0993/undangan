@@ -21,7 +21,7 @@ class InvitationController extends Controller
     {
         if($request->ajax())
         {
-            $record = Invitation::select(\DB::raw('invitations.id,guests.name,guests.no_telp,weddings.wedding_theme,invitations.time_start,weddings.wedding_date,invitations.status,invitations.realiaze_status'))
+            $record = Invitation::select(\DB::raw('invitations.id,guests.name,guests.no_telp,weddings.wedding_theme,weddings.wedding_time,weddings.wedding_date,invitations.status,invitations.realiaze_status'))
                         ->join('guests','guests.id','=','invitations.guest_id')
                         ->join('weddings','weddings.id','=','invitations.wedding_id')
                         ->get();
@@ -42,7 +42,7 @@ class InvitationController extends Controller
                                 <div class="media-body">
                                     <span class="text-blue-700 text-semibold">'.$data->wedding_theme.'</span>
                                 </div>
-                                <div class="text-muted text-size-small"><span class="text-semibold">'.Carbon::parse($data->time_start)->format('h:i A').'</span>
+                                <div class="text-muted text-size-small"><span class="text-semibold">'.Carbon::parse($data->wedding_time)->format('h:i A').'</span>
                                 </div>
                             </div>';
                 })
@@ -101,7 +101,6 @@ class InvitationController extends Controller
             $peserta = new Invitation();
             $peserta->guest_id = $request->guest_id;
             $peserta->wedding_id = $request->wedding_id;
-            $peserta->time_start = $request->time_start;
             $peserta->user_id = auth()->user()->id;
             $peserta->save();
             
@@ -137,7 +136,6 @@ class InvitationController extends Controller
             $peserta = Invitation::find($id);
             $peserta->guest_id = $request->guest_id;
             $peserta->wedding_id = $request->wedding_id;
-            $peserta->time_start = $request->time_start;
             $peserta->save();
             
             return response()->json([

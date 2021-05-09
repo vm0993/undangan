@@ -28,7 +28,7 @@ class HomeController extends Controller
     {
         if($request->ajax())
         {
-            $record = Invitation::select(\DB::raw('invitations.id,guests.name,guests.no_telp,weddings.wedding_theme,invitations.time_start,weddings.wedding_date,invitations.status,invitations.realiaze_status'))
+            $record = Invitation::select(\DB::raw('invitations.id,guests.name,guests.no_telp,weddings.wedding_theme,weddings.wedding_time,weddings.wedding_date,invitations.status,invitations.realiaze_status'))
                         ->join('guests','guests.id','=','invitations.guest_id')
                         ->join('weddings','weddings.id','=','invitations.wedding_id')
                         ->where('realiaze_status',0)
@@ -50,7 +50,7 @@ class HomeController extends Controller
                                 <div class="media-body">
                                     <span class="text-blue-700 text-semibold">'.$data->wedding_theme.'</span>
                                 </div>
-                                <div class="text-muted text-size-small"><span class="text-semibold">'.Carbon::parse($data->time_start)->format('h:m:ss').'</span>
+                                <div class="text-muted text-size-small"><span class="text-semibold">'.Carbon::parse($data->wedding_time)->format('h:m:ss').'</span>
                                 </div>
                             </div>';
                 })

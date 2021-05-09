@@ -35,9 +35,9 @@ class WeddingController extends Controller
                 ->addColumn('tanggal',function($data){
                     return '<div class="media-left">
                                 <div class="media-body">
-                                    <span class="text-blue-700 text-semibold">'.$data->wedding_themes.'</span>
+                                    <span class="text-blue-700 text-semibold">'.$data->wedding_theme.'</span>
                                 </div>
-                                <div class="text-muted text-size-small"><span class="text-semibold">'.Carbon::parse($data->wedding_date)->format('d M Y').'</span>
+                                <div class="text-muted text-size-small"><span class="text-semibold">'.Carbon::parse($data->wedding_date)->format('d M Y').' - '.Carbon::parse($data->wedding_time)->format('H:i A').'</span>
                                 </div>
                             </div>';
                 })
@@ -73,6 +73,7 @@ class WeddingController extends Controller
                 'pengantin_pria' => 'required',
                 'pengantin_wanita' => 'required',
                 'wedding_date' => 'required',
+                'wedding_time' => 'required',
             ];
 
             $validator = Validator::make($request->all(), $rules);
@@ -86,6 +87,7 @@ class WeddingController extends Controller
             $peserta->pengantin_pria = $request->pengantin_pria;
             $peserta->pengantin_wanita = $request->pengantin_wanita;
             $peserta->wedding_date = $request->wedding_date;
+            $peserta->wedding_time = $request->wedding_time;
             $peserta->wedding_theme = $request->wedding_theme;
             $peserta->save();
             
@@ -110,6 +112,7 @@ class WeddingController extends Controller
                 'pengantin_pria' => 'required',
                 'pengantin_wanita' => 'required',
                 'wedding_date' => 'required',
+                'wedding_time' => 'required',
             ];
 
             $validator = Validator::make($request->all(), $rules);
@@ -123,6 +126,7 @@ class WeddingController extends Controller
             $peserta->pengantin_pria = $request->pengantin_pria;
             $peserta->pengantin_wanita = $request->pengantin_wanita;
             $peserta->wedding_date = $request->wedding_date;
+            $peserta->wedding_time = $request->wedding_time;
             $peserta->wedding_theme = $request->wedding_theme;
             $peserta->save();
             

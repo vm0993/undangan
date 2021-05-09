@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Imports\TamuImport;
 use Excel;
 use App\Models\Guest;
+use App\Models\Invitation;
+use App\Models\Wedding;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Yajra\DataTables\DataTables;
@@ -177,6 +179,25 @@ class TamuController extends Controller
                 'fail' => false,
                 'redirect_url' => route('master.tamu')
             ]);
+        }
+    }
+
+    public function getUndangTamu(Request $request)
+    {
+        if($request->ajax())
+        {
+            $results = Guest::all();
+            $acara = Wedding::first();
+            foreach($results as $tamu)
+            {
+                $data = [
+                    'wedding_id' => $acara->id,
+                    'guest_id' => $tamu->id,
+                    'user_id' => auth()->user()->id,
+                ];
+
+                Invitation::create($data);
+            }
         }
     }
 }

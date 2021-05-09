@@ -62,6 +62,8 @@ Route::group( ['middleware' => ['auth','verified']], function() {
             Route::match(['get', 'put'],'/{sistem_id}/undangan/{id}/update', 'TamuController@editTamu')->name('master.tamu.update');
 
             Route::match(['get', 'post'],'/1/import','TamuController@tamuUpload')->name('master.tamu.upload');
+
+            Route::get('/undang-tamu','TamuController@getUndangTamu')->name('master.tamu.undang');
         });
     });
 

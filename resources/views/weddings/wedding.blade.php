@@ -29,7 +29,12 @@
                     <label for="wedding_date">Tanggal Acara</label>
                 </div>
             </div>
-            
+            <div class="col-md-4">
+                <div class="form-floating">
+                    {{ Form::time('wedding_time',null, ['id'=>'wedding_time', 'class'=>'form-control','placeholder'=>'Jam Undangan'] ) }}
+                    <label for="wedding_time">Jam Acara</label>
+                </div>
+            </div>
         </div>
         <div class="row mt-1">
             <div class="col-md-12">

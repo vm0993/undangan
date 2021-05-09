@@ -17,7 +17,6 @@
                         <tr>
                             <th width="20%">Nama Tamu</th>
                             <th width="33%">Title Acara</th>
-                            <th width="20%">Konfirmasi</th>
                             <th width="13%">Status</th>
                             <th width="12%" class="text-center">Action</th>
                         </tr>
@@ -46,7 +45,6 @@
             columns: [
                 {data: 'gabungan', name: 'gabungan'},
                 {data: 'judulundangan', name: 'judulundangan'},
-                {data: 'konfirmasi', name: 'konfirmasi'},
                 {data: 'status', name: 'status',className:'text-center'},
                 {data: 'action', name: 'action',className:'text-center',orderable: false, searchable: false},
             ],

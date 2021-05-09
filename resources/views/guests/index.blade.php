@@ -17,6 +17,7 @@
                     <div class="dropdown-menu" aria-labelledby="download">
                         <a href="#modalForm" data-href="{{ url()->current() }}/1/undangan" data-bs-toggle="modal" class="dropdown-item" role="button" aria-pressed="true">Tamu Baru</a>
                         <a href="#modalForm" data-href="{{ url()->current() }}/1/import" data-bs-toggle="modal" class="dropdown-item" aria-pressed="true">Upload Tamu/Peserta</a>
+                        <a href="javascript:void(0);" onclick="undangTamu();" class="dropdown-item" aria-pressed="true">Undang Tamu/Peserta</a>
                     </div>
                 </div>
                 <div class="col-md-4 text-right">
@@ -33,7 +34,6 @@
                             <th width="33%">Alamat</th>
                             <th width="20%">No Telepon</th>
                             <th width="13%">Status</th>
-                            <th width="12%" class="text-center">Action</th>
                         </tr>
                     </thead>
                 </table>
@@ -62,7 +62,6 @@
                 {data: 'address', name: 'address'},
                 {data: 'phone', name: 'phone'},
                 {data: 'status', name: 'status',className:'text-center'},
-                {data: 'action', name: 'action',className:'text-center',orderable: false, searchable: false},
             ],
             order: [[0, 'asc']]
         });
@@ -72,6 +71,21 @@
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
+
+        function undangTamu()
+        {
+            $.ajax({
+                url :  uri + '/undang-tamu',
+                type : 'get',
+                data: {
+                    '_token': "{{ csrf_token() }}"
+                },
+                success : function(data) {
+                    table.draw();
+                    toastr.info('Seluruh Tamu sudah di undang', 'info', {timeOut: 5000});
+                }
+            });
+        }
         
     </script>
     <script src="{{ asset('js/vimajs.js') }}"></script>
