@@ -20,8 +20,9 @@ header {
     float:left;
     width:60%;
     height: 70em;
-    font-family: Baskerville;
-    src: url('BaskervilleBoldBT.ttf');
+    /*font-family: Baskerville;*/
+    font-family: 'Libre Baskerville', serif;
+    src: url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@1&display=swap');
     color: #575557;
     position: relative;
 }
