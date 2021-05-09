@@ -151,7 +151,7 @@ class InvitationController extends Controller
     {
         $title = 'Cetak Undangan';
         $invitation = Invitation::with(['tamu','wedding'])->find($id);
-        $undangan = nl2br("Nama : ".$invitation->tamu->name."\r\nNama : ".$invitation->tamu->name."\r\nNo Telp : ".$invitation->tamu->no_telp);
+        $undangan = nl2br("Nama : ".$invitation->tamu->name."\r\Alamat : ".$invitation->tamu->alamat1."\r\nNo Telp : ".$invitation->tamu->no_telp);
         
         $params = [
             'title'  => $title,
