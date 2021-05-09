@@ -27,35 +27,40 @@ header {
     position: relative;
 }
 
-.laura, .javery, .ampersand {
+.laura, .javery {
+    font-size: 5em;
+    text-align: left;
+}
+
+.ampersand {
     font-size: 5em;
     text-align: center;
 }
 
 .laura {
     position: absolute;
-    top: 55px;
+    top: 65px;
     left: 142px;
 }
 
 .javery {
     position: absolute;
-    top: 150px;
-    left: 235px;  
+    top: 140px;
+    left: 240px;  
 }
 
 .ampersand {
     font-style: italic; 
     position: absolute;
     top: 105px;
-    left: 176px;
+    left: 180px;
 }
 
 date {
     border-top: 1px solid #575557;
     border-bottom: 1px solid #575557;
     position: absolute;
-    top: 205px;
+    top: 215px;
     left: 180px
 }
 #company {
